@@ -13,6 +13,7 @@
 
 Route::get('/', 'PageController@index')->name('pages.index');
 Route::get('/contact', 'PageController@contact')->name('pages.contact');
+Route::get('/post/{id}', 'PageController@post')->name('pages.post');
 
 Route::group(['middleware' => ['auth']], function () {
 

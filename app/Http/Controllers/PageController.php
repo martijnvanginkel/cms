@@ -18,4 +18,11 @@ class PageController extends Controller
     {
       return view('pages.contact');
     }
+
+    public function post($id)
+    {
+      $post = Post::find($id);
+
+      return view('pages.post', compact('post'));
+    }
 }
