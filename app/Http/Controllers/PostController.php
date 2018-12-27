@@ -49,6 +49,7 @@ class PostController extends Controller
 
       $post->title = $request->title;
       $post->text = $request->text;
+      $post->link = $request->link;
 
       $post->save();
 
@@ -63,7 +64,7 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-      return view('posts.show', compact('post'));
+      
     }
 
     /**
@@ -89,7 +90,13 @@ class PostController extends Controller
 
       $post->title = $request->title;
       $post->text = $request->text;
-      $post->filename = $request->filename;
+      $post->link = $request->link;
+
+      if($request->filename != null)
+      {
+        $post->filename = $request->filename;
+      }
+
       $post->update();
 
       return redirect()->route('posts.index');

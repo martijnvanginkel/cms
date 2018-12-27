@@ -9,16 +9,23 @@
     {{ method_field('PUT') }}
 
     <div class="field">
-      <label class="label" for="title">Name</label>
+      <label class="label" for="title">Title</label>
       <div class="control">
-        <input class="input" name="title" type="text" value="{{ $post->title }}">
+        <input class="input" name="title" type="text" placeholder="Title here" value="{{ $post->title }}">
       </div>
     </div>
 
     <div class="field">
-      <label for="text"class="label">Message</label>
+      <label for="text"class="label">Text</label>
       <div class="control">
-        <textarea class="textarea" name="text" placeholder="Textarea">{{ $post->text }}</textarea>
+        <textarea class="textarea" name="text" placeholder="Text here">{{ $post->text }}</textarea>
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="label" for="link">Link</label>
+      <div class="control">
+        <input class="input" name="link" type="text" placeholder="https://www.instagram.com/ ..." value="{{ $post->link }}">
       </div>
     </div>
 

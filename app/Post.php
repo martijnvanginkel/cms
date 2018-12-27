@@ -10,5 +10,6 @@ class Post extends Model
   use Softdeletes;
 
   protected $dates = ['deleted_at'];
+  protected $fillable = ['filename, link'];
 
 }

@@ -6,6 +6,15 @@
 #EDF5E1
 */
 
+@font-face {font-family: "Pixelate";
+  src: url("//db.onlinewebfonts.com/t/50a184abd35d0a97bc434a3c2ba6d89f.eot");
+  src: url("//db.onlinewebfonts.com/t/50a184abd35d0a97bc434a3c2ba6d89f.eot?#iefix") format("embedded-opentype"),
+  url("//db.onlinewebfonts.com/t/50a184abd35d0a97bc434a3c2ba6d89f.woff2") format("woff2"),
+  url("//db.onlinewebfonts.com/t/50a184abd35d0a97bc434a3c2ba6d89f.woff") format("woff"),
+  url("//db.onlinewebfonts.com/t/50a184abd35d0a97bc434a3c2ba6d89f.ttf") format("truetype"),
+  url("//db.onlinewebfonts.com/t/50a184abd35d0a97bc434a3c2ba6d89f.svg#SF Pixelate") format("svg");
+}
+
 html {
   height:100%;
 }
@@ -15,6 +24,8 @@ body {
   display:flex;
   flex-direction:column;
   background-color:#5CDB95;
+  font-family: 'Open Sans', sans-serif;
+  overflow-y: overlay;
 }
 
 main{
@@ -34,14 +45,22 @@ a{
 }
 
 .main-title{
-  font-family:'SFPixelate';
+  font-family:'Pixelate';
   font-size:32px;
   color:#05386B;
   margin:20px auto 10px auto;
 }
 
-.main-menu{
-  margin-bottom:5px;
+@media all and (max-width : 768px) {
+  .main-title{
+    font-size:28px;
+  }
+}
+
+@media all and (min-width : 768px) {
+  .main-menu{
+    margin-bottom:10px;
+  }
 }
 
 .main-menu ul{
@@ -54,7 +73,6 @@ a{
 
 .main-menu ul li{
   display:flex;
-  font-family:'Arial';
   border:2px solid #EDF5E1;
   border-radius:3px;
   margin:0 10px;
@@ -78,16 +96,21 @@ a{
 
 .article-section{
   display:flex;
-  flex-wrap:wrap;
   width:100%;
-  font-family:'arial';
+  flex-wrap:wrap;
 }
 
 .article-wrapper{
-  margin:10px;
+  margin:5px 10px 5px 10px;
   background-color:#EDF5E1;
   border:0;
   border-radius:3px;
+}
+
+@media all and (min-width : 640px) {
+  .article-wrapper{
+      margin:10px;
+  }
 }
 
 .article-text{
@@ -193,8 +216,8 @@ footer i{
 /* CONTACT PAGE */
 .contact-form{
   max-width:500px;
+  margin:0 auto;
   padding:10px;
-  font-family:'Arial';
 }
 
 .contact-form input, textarea{
@@ -213,7 +236,17 @@ footer i{
   min-height:100px;
 }
 
-.contact-form button{
+.send-form{
+  display:flex;
+  flex-direction:row;
+}
+
+.send-form p{
+  padding:5px 10px;
+  color:#EDF5E1;
+}
+
+.send-form button{
   color:#EDF5E1;
   background-color:#5CDB95;
   border:2px solid #EDF5E1;
@@ -223,7 +256,7 @@ footer i{
   transition: all 0.1s ease-in;
 }
 
-.contact-form button:hover{
+.send-form button:hover{
   color:#5CDB95;
   background-color:#EDF5E1;
   transition: all 0.1s ease-in;
@@ -232,43 +265,70 @@ footer i{
 
 /* SHOW POST */
 .post-section{
+  max-width:640px;
+  width:100%;
+  flex-grow:1;
   display:flex;
   flex-direction:column;
-  max-width:640px;
+}
+
+@media all and (max-width : 640px) {
+  .post-wrapper{
+    margin:0 10px;
+  }
+}
+
+.post-wrapper{
+  flex-grow:1;
+  display:flex;
+  flex-direction:column;
 }
 
 .image-banner{
-  height:240px;
+  height:100%;
   width:100%;
-  overflow:hidden;
+  transition: all 0.1s ease-in;
+}
+
+.image-banner:hover{
+  filter:brightness(90%);
+  transition: all 0.1s ease-in;
 }
 
 .image-banner img{
-  position:relative;
-  bottom:120px;
+  width:100%;
 }
 
 .post-section time{
-  font-size:12px;
-  color:#05386B;
+  font-size:10px;
+  color:#379683;
   font-style:italic;
   align-self:flex-end;
 }
 
-.post-section h1{
+.post-text{
+  color:#05386B;
+  flex-grow:1;
+}
+
+.post-text h1{
   font-size:24px;
-  font-family:"SFPixelate";
-  margin:10px 0 5px 0;
+  font-family:'Pixelate';
+  margin-top:5px;
 }
 
-.post-info{
-  display:flex;
-  flex-direction:row;
-  font-size:12px;
+.post-text p{
+  font-size:14px;
+  margin:10px 0;
 }
 
-.post-info > *{
-    color:#EDF5E1;
+@media all and (max-width : 480px) {
+  .post-text h1{
+    font-size:16px;
+  }
+  .post-text p{
+    font-size:12px;
+  }
 }
 
 .link-wrapper{
@@ -281,7 +341,6 @@ footer i{
   color:#EDF5E1;
   text-align:center;
   transition: all 0.1s ease-in;
-  font-family:'Arial';
   font-size:12px;
   border-radius:3px;
   padding:5px;
@@ -293,13 +352,18 @@ footer i{
   transition: all 0.1s ease-in;
 }
 
-/* .link-wrapper a{
-  background-color:green;
-} */
+.written-by{
+  font-size:12px;
+  font-style:italic;
+  color:#EDF5E1;
+}
 
+.written-by a{
+  color:#379683;
+  transition: all 0.1s ease-in;
+}
 
-
-
-/* .image-banner img{
-  overflow:hidden;
-} */
+.written-by a:hover{
+  color:#05386B;
+  transition: all 0.1s ease-in;
+}

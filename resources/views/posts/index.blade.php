@@ -22,7 +22,6 @@
         <td>{{ substr($post->text, 0, 10) }} ... </td>
         <td>{{ substr($post->filename, -10)}}</td>
         <td>{{ date('d/m/Y', strtotime($post->created_at)) }}</td>
-        <td><a href="{{ route('posts.show', $post->id) }}" class="button is-link is-small">Show</a></td>
         <td><a href="{{ route('posts.edit', $post->id) }}" class="button is-primary is-small">Edit</a></td>
         <td>
           <form action="{{ route('posts.destroy',$post->id) }}" method="POST">

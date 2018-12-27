@@ -14,7 +14,14 @@
   <label for="message" class="label"></label>
   <textarea class="textarea" name="message" placeholder="Your message to me" required></textarea>
 
-  <button type="submit">Submit</button>
+  <div class="send-form">
+    <button type="submit">Submit</button>
+    <p>
+      @if ($message = Session::get('success'))
+        <strong>{{ $message }}</strong>
+      @endif
+    </p>
+  </div>
 
 </form>
 

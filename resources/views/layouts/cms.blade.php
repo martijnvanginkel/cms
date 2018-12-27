@@ -18,7 +18,7 @@
 
 <nav class="cms-nav">
 
-  <h1>Website</h1>
+  <h1><a href="{{ route('pages.index') }}">Website</a></h1>
 
     @if(Auth::check())
       <a class="button" href="{{ route('register') }}">

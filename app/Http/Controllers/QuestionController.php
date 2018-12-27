@@ -45,7 +45,7 @@ class QuestionController extends Controller
 
       $question->save();
 
-      return redirect()->route('pages.contact');
+      return back()->with('success','Send successfully!');
     }
 
     /**
