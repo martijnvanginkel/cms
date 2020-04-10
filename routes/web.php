@@ -19,7 +19,6 @@ Route::group(['middleware' => ['auth']], function () {
 
   Route::get('/home', 'PostController@index')->name('home');
   Route::get('/users', 'UserController@index')->name('users.index');
-
   Route::resource('posts', 'PostController');
   Route::resource('questions', 'QuestionController')->except('store');
 });
